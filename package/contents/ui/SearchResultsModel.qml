@@ -191,15 +191,6 @@ ListModel {
 
 		// console.log(JSON.stringify(resultList, null, '\t'))
 
-		//--- listen for changes
-		for (var i = 0; i < runnerModel.count; i++){
-			var runner = runnerModel.modelForRow(i);
-			if (!runner.listenersBound) {
-				runner.countChanged.connect(debouncedRefresh.logAndRestart)
-				runner.dataChanged.connect(debouncedRefresh.logAndRestart)
-				runner.listenersBound = true;
-			}
-		}
 
 		refreshed()
 	}
@@ -209,7 +200,7 @@ ListModel {
 		var runner = runnerModel.modelForRow(model.runnerIndex)
 		var closeRequested = runner.trigger(model.runnerItemIndex, "", null)
 		if (closeRequested) {
-			plasmoid.expanded = false
+			widget.expanded = false
 		}
 		itemTriggered()
 	}
@@ -242,7 +233,7 @@ ListModel {
 		var runner = runnerModel.modelForRow(model.runnerIndex)
 		var closeRequested = runner.trigger(model.runnerItemIndex, actionId, actionArgument)
 		if (closeRequested) {
-			plasmoid.expanded = false
+			widget.expanded = false
 		}
 		itemTriggered()
 

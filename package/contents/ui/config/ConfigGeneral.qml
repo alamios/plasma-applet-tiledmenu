@@ -9,13 +9,17 @@ import ".." as TiledMenu
 import "../libconfig" as LibConfig
 
 
-LibConfig.FormKCM {
+LibConfig.ConfigForm {
 	id: formLayout
 
-	readonly property string plasmaStyleLabelText: {
-		var plasmaStyleText = i18nd("kcm_desktoptheme", "Plasma Style")
-		return plasmaStyleText + ' (' + PlasmaCore.Theme.themeName + ')'
-	}
+    // Existing reusable controls edit a local draft. Plasma commits cfg_*
+    // aliases on Apply/OK, so Cancel leaves the applet configuration unchanged.
+    property QtObject configurationProxy: QtObject {
+        id: plasmoid
+        property alias configuration: formLayout.settings
+    }
+
+	readonly property string plasmaStyleLabelText: i18nd("kcm_desktoptheme", "Plasma Style")
 
 	function isClassName(item, className) {
 		var itemClassName = (''+item).split('_', 1)[0]

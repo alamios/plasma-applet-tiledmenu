@@ -121,7 +121,7 @@ PlasmaComponents3.TextField {
 			id: previewFill
 			anchors.fill: parent
 			color: colorField.valueColor
-			border.width: 1 * Kirigami.Units.devicePixelRatio
+			border.width: 1 * Screen.devicePixelRatio
 			border.color: Kirigami.ColorUtils.linearInterpolation(color, Kirigami.Theme.textColor, 0.5)
 			radius: width / 2
 		}

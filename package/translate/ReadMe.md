@@ -1,6 +1,14 @@
 # Translate
 
-## Status
+## Plasma 6 development builds
+
+From the repository root, `bash ./build --no-merge` compiles the existing catalogs
+and packages the widget without rewriting translation sources. Use
+`bash ./build --i18n-only` to compile only the catalogs. `bash ./build` retains the
+upstream translation extraction/merge workflow for release preparation.
+Preview commands require Plasma 6's `plasma-sdk`, which provides `plasmoidviewer`.
+
+## Inherited upstream status
 
 |  Locale  |  Lines  | % Done|
 |----------|---------|-------|

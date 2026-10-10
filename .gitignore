@@ -2,3 +2,6 @@
 *.qmlc
 *.jsc
 *.mo
+
+*.zip
+__pycache__/

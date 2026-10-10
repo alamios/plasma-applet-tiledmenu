@@ -37,16 +37,6 @@ ColumnLayout {
 	// a ColumnLayout is to shrink the spacing between the buttons.
 	spacing: Kirigami.Units.smallSpacing
 
-	// Assign buddyFor to the first RadioButton so that the Kirigami label aligns with it.
-	// Repeater is also a visibleChild, so avoid it.
-	Kirigami.FormData.buddyFor: {
-		for (var i = 0; i < visibleChildren.length; i++) {
-			if (!(visibleChildren[i] instanceof Repeater)) {
-				return visibleChildren[i]
-			}
-		}
-		return null
-	}
 
 	Repeater {
 		id: buttonRepeater

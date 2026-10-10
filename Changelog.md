@@ -1,3 +1,27 @@
+## v46.1 - Local Plasma 6.6 migration (unreleased)
+
+* Integrate General settings with native cfg_* aliases and draft values for
+  Apply/OK/Cancel, generated from the KConfig schema.
+* Restore the missing configuration TextField and replace the legacy advanced
+  configuration page with Qt Quick Controls 2 and native configuration defaults.
+* Use PlasmoidItem for expansion, search runner appletInterface and popup resizing.
+* Handle lazy popup creation and ignore Enter when no search result is selected.
+* Manage runner subscriptions with Instantiator and Connections instead of adding
+  JavaScript properties to C++ model objects.
+* Port tile scrolling/drag coordinates to an explicit Qt 6 Flickable and
+  replace removed PlasmaCore.Theme references with Kirigami colors.
+* Replace the remaining deprecated Kirigami devicePixelRatio reference.
+* Detect and back up unrecognized Plasma 5 packages before installing Plasma 6;
+  restore the old package on failure and retain panel configuration.
+* Require Plasma 6 package tools, fix uninstall by plugin ID, propagate failures,
+  and make restarting Plasma an explicit install option.
+* Support development packaging without modifying translation sources.
+* Add Qt 6 component and configuration/search behavior checks, plus a
+  plasmoidviewer runtime check for real search, context menus and tile editing.
+
+The v46 TODO list below records historical upstream limitations. See
+[MIGRATION.md](MIGRATION.md) for the current validation status.
+
 ## v46 - March 30 2024
 
 * **Plasma 6 TODO:**

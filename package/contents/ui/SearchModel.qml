@@ -1,4 +1,5 @@
 import QtQuick
+import QtQml.Models
 import org.kde.plasma.private.kicker as Kicker
 
 Item {
@@ -26,7 +27,7 @@ Item {
 	Kicker.RunnerModel {
 		id: runnerModel
 
-		appletInterface: plasmoid
+		appletInterface: widget
 		favoritesModel: rootModel.favoritesModel
 		mergeResults: config.searchResultsMerged
 
@@ -39,6 +40,21 @@ Item {
 		onDataChanged: debouncedRefresh.restart()
 		onCountChanged: debouncedRefresh.restart()
 	}
+
+    // Connections follow the lifetime of each runner model. C++ models do not
+    // allow adding a JavaScript listenersBound property.
+    Instantiator {
+        model: runnerModel
+        delegate: QtObject {
+            required property int index
+            readonly property var runner: runnerModel.modelForRow(index)
+            property Connections runnerConnections: Connections {
+                target: runner
+                function onCountChanged() { debouncedRefresh.restart() }
+                function onDataChanged() { debouncedRefresh.restart() }
+            }
+        }
+    }
 
 	Timer {
 		id: debouncedRefresh

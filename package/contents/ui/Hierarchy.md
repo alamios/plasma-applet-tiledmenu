@@ -1,4 +1,14 @@
-Main
+# Plasma 6 component hierarchy
+
+`widget` owns expansion and representation properties. `plasmoid.configuration`
+continues to provide persistent settings. Both the root application model and
+the search runner model use `widget` as their `appletInterface`.
+`SearchModel` manages subscriptions to runner models with `Instantiator` and
+`Connections`; `SearchResultsModel` flattens results and dispatches actions.
+`TileGrid` uses an explicit Flickable inside ScrollView. General configuration
+uses `ConfigForm`, whose cfg_* aliases are generated from `config/main.xml`.
+
+main.qml (PlasmoidItem, id: widget)
 	SearchModel
 		SearchResultsModel
 	LauncherIcon

@@ -104,14 +104,12 @@ PlasmoidItem {
 
 	hideOnWindowDeactivate: !widget.userConfiguring
 	activationTogglesExpanded: true
-	onExpandedChanged: function(expanded) {
-		if (expanded) {
+	onExpandedChanged: function(isExpanded) {
+		if (isExpanded) {
 			search.query = ""
 			search.applyDefaultFilters()
 			// config.showSearch = false
-			// TODO popup is an invalid reference here for some reason
-			fullRepresentationItem.searchView.searchField.forceActiveFocus()
-			fullRepresentationItem.searchView.showDefaultView()
+			initializePopup()
 
 			// Debug TileEditorView
 			// fullRepresentationItem.tileGrid.addDefaultTiles()
@@ -122,6 +120,14 @@ PlasmoidItem {
 			justOpenedTimer.start()
 		}
 	}
+	function initializePopup() {
+		if (expanded && fullRepresentationItem) {
+			fullRepresentationItem.searchView.searchField.forceActiveFocus()
+			fullRepresentationItem.searchView.showDefaultView()
+		}
+	}
+	onFullRepresentationItemChanged: initializePopup()
+
 	Timer {
 		id: justOpenedTimer
 		repeat: false
@@ -156,7 +162,7 @@ PlasmoidItem {
 		// The FullRepresentation must have an appletInterface property.
 		// https://invent.kde.org/plasma/plasma-desktop/-/commit/23c4e82cdcb6c7f251c27c6eefa643415c8c5927
 		// https://invent.kde.org/frameworks/plasma-framework/-/merge_requests/500/diffs
-		readonly property var appletInterface: Plasmoid.self
+		readonly property var appletInterface: widget
 
 		Timer {
 			id: resizeHeight
