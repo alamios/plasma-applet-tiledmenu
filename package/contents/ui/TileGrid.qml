@@ -63,16 +63,20 @@ DropArea {
 		resetDragHover()
 	}
 	onDropped: function(drop) {
-		// console.log('onDropped', drop)
+		if (!canDrop || plasmoid.configuration.tilesLocked) {
+			resetDrag()
+			return
+		}
 		if (draggedItem) {
 			tileGrid.moveTile(draggedItem, dropHoverX, dropHoverY)
 			tileGrid.resetDrag()
-			// event.accept(Qt.MoveAction)
+			drop.accept(Qt.MoveAction)
 		} else if (addedItem) {
 			addedItem.x = dropHoverX
 			addedItem.y = dropHoverY
 			tileGrid.tileModel.push(addedItem)
 			tileGrid.tileModelChanged()
+			drop.acceptProposedAction()
 			tileGrid.resetDrag()
 		}
 	}
@@ -84,13 +88,18 @@ DropArea {
 		scrollUpArea.containsDrag = false
 		scrollDownArea.containsDrag = false
 		addedItem = null
+		canDrop = false
 	}
 	function resetDrag() {
 		resetDragHover()
 		isDragging = false
 		draggedIndex = -1
+		dropOffsetX = 0
+		dropOffsetY = 0
 	}
-	function startDrag(index) {
+	function startDrag(index, offsetX, offsetY) {
+		dropOffsetX = offsetX || 0
+		dropOffsetY = offsetY || 0
 		draggedIndex = index
 		dropHoverX = draggedItem.x
 		dropHoverY = draggedItem.y

@@ -1,3 +1,13 @@
+## Plasma 6.6 tile drag fix
+
+* Fix the readonly dragActive change handler: QML property change signals do not
+  pass the property's new value as an argument.
+* Use internal scene drags with the actual press hotspot and preserve the mouse
+  grab against the tile grid Flickable. Account for the mouse drag threshold.
+* Reject occupied/locked destinations and explicitly accept successful drops.
+* Reset drag offsets and drop validity on completion/cancellation.
+* Add regression tests using real pointer events on the production components.
+
 ## v46.1 - Local Plasma 6.6 migration (unreleased)
 
 * Integrate General settings with native cfg_* aliases and draft values for

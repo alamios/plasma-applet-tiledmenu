@@ -3,7 +3,7 @@
 This is an independently maintained fork of
 [Zren/plasma-applet-tiledmenu](https://github.com/Zren/plasma-applet-tiledmenu),
 a launcher inspired by Windows 10's Start Menu. It includes compatibility fixes
-for **KDE Plasma 6.6** and recovery of legacy installations.
+for **KDE Plasma 6.6**, legacy installation recovery, and tile drag-and-drop fixes.
 
 The original project and its KDE Store listing are maintained by the upstream
 author. This fork is developed separately and is not an official upstream release.
@@ -32,7 +32,8 @@ The annotated tag `upstream-baseline` marks the original upstream commit
 ## Plasma 6.6 compatibility and installation
 
 This fork starts from upstream commit `21c8540`, which already includes an initial
-Plasma 6 port. It adds fixes for configuration, launcher APIs, tile scrolling, and updating legacy Plasma 5 installations without losing panel settings.
+Plasma 6 port. It adds fixes for configuration, launcher APIs, tile scrolling and
+dragging, and updating legacy Plasma 5 installations without losing panel settings.
 
 It has been tested on Plasma **6.6.6**, Qt **6.10.2** and KDE Frameworks **6.24**.
 Package version: **46.1**. Compatibility with other Plasma versions has not been
@@ -66,6 +67,7 @@ For development checks and a separate preview window:
 /usr/bin/python3 tools/check-qml.py
 /usr/bin/python3 tools/check-runtime.py
 /usr/bin/python3 tools/test-install.py
+/usr/bin/python3 tools/test-drag.py
 plasmoidviewer -a "$PWD/package"
 ```
 
@@ -80,6 +82,12 @@ configuration aliases with `/usr/bin/python3 tools/generate-config.py`. Qt5Compa
 
 See [MIGRATION.md](MIGRATION.md) for validation results and remaining manual
 checks. Passing component checks does not establish full desktop compatibility.
+
+## Moving tiles
+
+Drag an unlocked tile with the left mouse button to an empty grid position.
+A drop over an occupied position or outside the menu leaves it in place.
+Turn off “Lock Tiles” in the tile context menu before rearranging tiles.
 
 ## Screenshots
 

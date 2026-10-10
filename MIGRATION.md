@@ -101,3 +101,20 @@ synthetic panel settings in isolated XDG directories. The real v45 installation
 reported on 2026-10-10 was successfully replaced and backed up. This verifies
 package recovery; checking the user's complete existing tile layout after
 reloading Plasma remains a manual step.
+
+## Tile drag regression
+
+The readonly `dragActive` property emits a change notification without a value
+argument. Its old function(dragActive) handler tested an undefined argument and
+never started the internal scene drag. TileItem now reads its own property and
+uses Drag.Internal with the press hotspot. The mouse area retains its grab
+against Flickable, and disabling drag smoothing avoids a cell-position offset
+caused by the drag threshold. The grid rejects occupied/locked destinations,
+accepts successful drops, and clears stale offsets on completion.
+
+`tools/test-drag.py` sends real mouse events through a QQuickView containing the
+production TileGrid and TileItem. It reproduces the unchanged-coordinate bug
+before the fix and verifies moving a tile without launching an application,
+rejecting occupied cells, honoring the tile lock, and canceling outside the grid.
+Panel-specific interaction still needs confirmation after reloading the widget.
+Qt drag API reference: https://doc.qt.io/qt-6/qml-qtquick-drag.html
