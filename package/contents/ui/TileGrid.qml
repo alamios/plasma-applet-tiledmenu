@@ -50,11 +50,11 @@ DropArea {
 
 	//--- Drag and Drop events
 	// onContainsDragChanged: console.log('containsDrag', containsDrag)
-	onEntered: {
+	onEntered: function(drag) {
 		// console.log('onEntered', drag)
 		dragTick(drag)
 	}
-	onPositionChanged: {
+	onPositionChanged: function(drag) {
 		// console.log('onPositionChanged', drag)
 		dragTick(drag)
 	}
@@ -62,17 +62,21 @@ DropArea {
 		// console.log('onExited')
 		resetDragHover()
 	}
-	onDropped: {
-		// console.log('onDropped', drop)
+	onDropped: function(drop) {
+		if (!canDrop || plasmoid.configuration.tilesLocked) {
+			resetDrag()
+			return
+		}
 		if (draggedItem) {
 			tileGrid.moveTile(draggedItem, dropHoverX, dropHoverY)
 			tileGrid.resetDrag()
-			// event.accept(Qt.MoveAction)
+			drop.accept(Qt.MoveAction)
 		} else if (addedItem) {
 			addedItem.x = dropHoverX
 			addedItem.y = dropHoverY
 			tileGrid.tileModel.push(addedItem)
 			tileGrid.tileModelChanged()
+			drop.acceptProposedAction()
 			tileGrid.resetDrag()
 		}
 	}
@@ -84,13 +88,18 @@ DropArea {
 		scrollUpArea.containsDrag = false
 		scrollDownArea.containsDrag = false
 		addedItem = null
+		canDrop = false
 	}
 	function resetDrag() {
 		resetDragHover()
 		isDragging = false
 		draggedIndex = -1
+		dropOffsetX = 0
+		dropOffsetY = 0
 	}
-	function startDrag(index) {
+	function startDrag(index, offsetX, offsetY) {
+		dropOffsetX = offsetX || 0
+		dropOffsetY = offsetY || 0
 		draggedIndex = index
 		dropHoverX = draggedItem.x
 		dropHoverY = draggedItem.y
@@ -177,8 +186,8 @@ DropArea {
 	// https://github.com/qt/qtdeclarative/blob/a4aa8d9ade44d75cb5a1d84bd7c1773fadc73095/src/quick/items/qquickdroparea_p.h#L63
 	function dragTick(event) {
 		// console.log('dragTick', event.x, event.y)
-		var dragX = event.x + scrollView.flickableItem.contentX - dropOffsetX
-		var dragY = event.y + scrollView.flickableItem.contentY - dropOffsetY
+		var dragX = event.x + tileFlickable.contentX - dropOffsetX
+		var dragY = event.y + tileFlickable.contentY - dropOffsetY
 		var modelX = Math.floor(dragX / cellBoxSize)
 		var modelY = Math.floor(dragY / cellBoxSize)
 		var globalPoint = popup.mapFromItem(tileGrid, event.x, event.y)
@@ -391,144 +400,145 @@ DropArea {
 		id: scrollView
 		anchors.fill: parent
 
-		readonly property int scrollTop: flickableItem ? flickableItem.contentY : 0
-		readonly property int scrollHeight: flickableItem ? flickableItem.contentHeight : 0
-		readonly property int scrollTopAtBottom: viewport ? scrollHeight - viewport.height : 0
+		readonly property real scrollTop: tileFlickable.contentY
+		readonly property real scrollHeight: tileFlickable.contentHeight
+		readonly property real scrollTopAtBottom: Math.max(0, scrollHeight - tileFlickable.height)
 		readonly property bool scrollAtTop: scrollTop == 0
 		readonly property bool scrollAtBottom: scrollTop >= scrollTopAtBottom
 
 		function scrollBy(deltaY) {
-			if (flickableItem) {
-				// console.log('scrollHeight', scrollTopAtBottom, scrollHeight, viewport.height)
-				flickableItem.contentY = Math.max(0, Math.min(scrollTop + deltaY, scrollTopAtBottom))
-			}
+			tileFlickable.contentY = Math.max(0, Math.min(scrollTop + deltaY, scrollTopAtBottom))
 		}
 
-		// __wheelAreaScrollSpeed: cellBoxSize
-		// style: ScrollViewStyle {
-		// 	transientScrollBars: true
-		// }
-		
-		Item {
-			id: scrollItem
+		QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
+		Flickable {
+			id: tileFlickable
+			clip: true
+			contentWidth: scrollItem.width
+			contentHeight: scrollItem.height
+			flickableDirection: Flickable.VerticalFlick
 
-			width: columns * cellBoxSize
-			height: rows * cellBoxSize
+			Item {
+				id: scrollItem
 
-			// Rectangle {
-			// 	anchors.fill: parent
-			// 	color: "#88336699"
-			// }
+				width: columns * cellBoxSize
+				height: rows * cellBoxSize
 
-			Repeater {
-				id: cellRepeater
-				readonly property int cellCount: columns * rows
-				onCellCountChanged: {
-					if (!isDragging) {
-						model = cellCount
-					}
-				}
-				model: 0
+				// Rectangle {
+				// 	anchors.fill: parent
+				// 	color: "#88336699"
+				// }
 
-				Item {
-					id: cellItem
-					property int modelX: modelData % columns
-					property int modelY: Math.floor(modelData / columns)
-					x: modelX * cellBoxSize
-					y: modelY * cellBoxSize
-					width: cellBoxSize
-					height: cellBoxSize
-
-					readonly property bool tileHovered: (hasDrag
-						&& dropHoverX <= modelX && modelX < dropHoverX + dropWidth
-						&& dropHoverY <= modelY && modelY < dropHoverY + dropHeight
-					)
-					readonly property bool groupAreaHovered: {
-						if (isDraggingGroup) {
-							var groupX1 = dropHoverX
-							var groupY1 = dropHoverY + dropHeight
-							var groupX2 = groupX1 + draggedGroupRect.w - 1
-							var groupY2 = groupY1 + draggedGroupRect.h - 1
-							return groupX1 <= modelX && modelX <= groupX2
-								&& groupY1 <= modelY && modelY <= groupY2
-						} else {
-							return false
+				Repeater {
+					id: cellRepeater
+					readonly property int cellCount: columns * rows
+					onCellCountChanged: {
+						if (!isDragging) {
+							model = cellCount
 						}
 					}
+					model: 0
 
-					Rectangle {
-						anchors.fill: parent
-						anchors.margins: cellMargin
-						color: {
-							if (cellItem.tileHovered) {
-								if (canDrop) {
-									return "#88336699"
-								} else {
-									return "#88880000"
-								}
-							} else if (cellItem.groupAreaHovered) {
-								return "#8848395d" // purple
+					Item {
+						id: cellItem
+						property int modelX: modelData % columns
+						property int modelY: Math.floor(modelData / columns)
+						x: modelX * cellBoxSize
+						y: modelY * cellBoxSize
+						width: cellBoxSize
+						height: cellBoxSize
+
+						readonly property bool tileHovered: (hasDrag
+							&& dropHoverX <= modelX && modelX < dropHoverX + dropWidth
+							&& dropHoverY <= modelY && modelY < dropHoverY + dropHeight
+						)
+						readonly property bool groupAreaHovered: {
+							if (isDraggingGroup) {
+								var groupX1 = dropHoverX
+								var groupY1 = dropHoverY + dropHeight
+								var groupX2 = groupX1 + draggedGroupRect.w - 1
+								var groupY2 = groupY1 + draggedGroupRect.h - 1
+								return groupX1 <= modelX && modelX <= groupX2
+									&& groupY1 <= modelY && modelY <= groupY2
 							} else {
-								return "transparent"
-							}
-						}
-						border.width: 1
-						border.color: tileGrid.editing ? "#44000000" : "transparent"
-					}
-
-					MouseArea {
-						anchors.fill: parent
-						acceptedButtons: Qt.RightButton
-						onClicked: function(mouse) {
-							if (mouse.button == Qt.RightButton) {
-								cellContextMenu.cellX = cellItem.modelX
-								cellContextMenu.cellY = cellItem.modelY
-								var pos = mapToItem(scrollItem, mouse.x, mouse.y) // cellContextMenu is a child of scrollItem
-								cellContextMenu.open(pos.x, pos.y)
+								return false
 							}
 						}
 
+						Rectangle {
+							anchors.fill: parent
+							anchors.margins: cellMargin
+							color: {
+								if (cellItem.tileHovered) {
+									if (canDrop) {
+										return "#88336699"
+									} else {
+										return "#88880000"
+									}
+								} else if (cellItem.groupAreaHovered) {
+									return "#8848395d" // purple
+								} else {
+									return "transparent"
+								}
+							}
+							border.width: 1
+							border.color: tileGrid.editing ? "#44000000" : "transparent"
+						}
+
+						MouseArea {
+							anchors.fill: parent
+							acceptedButtons: Qt.RightButton
+							onClicked: function(mouse) {
+								if (mouse.button == Qt.RightButton) {
+									cellContextMenu.cellX = cellItem.modelX
+									cellContextMenu.cellY = cellItem.modelY
+									var pos = mapToItem(scrollItem, mouse.x, mouse.y) // cellContextMenu is a child of scrollItem
+									cellContextMenu.open(pos.x, pos.y)
+								}
+							}
+
+						}
 					}
 				}
-			}
-			PlasmaExtras.Menu {
-				id: cellContextMenu
-				property int cellX: -1
-				property int cellY: -1
+				PlasmaExtras.Menu {
+					id: cellContextMenu
+					property int cellX: -1
+					property int cellY: -1
 
-				PlasmaExtras.MenuItem {
-					icon: "group-new"
-					text: i18n("New Group")
-					visible: !plasmoid.configuration.tilesLocked
-					onClicked: {
-						var tile = tileGrid.addGroup(cellContextMenu.cellX, cellContextMenu.cellY)
-						tileGrid.editTile(tile)
+					PlasmaExtras.MenuItem {
+						icon: "group-new"
+						text: i18n("New Group")
+						visible: !plasmoid.configuration.tilesLocked
+						onClicked: {
+							var tile = tileGrid.addGroup(cellContextMenu.cellX, cellContextMenu.cellY)
+							tileGrid.editTile(tile)
+						}
+					}
+
+					TileGridPresets {
+						id: tileGridPresets
+						visible: !plasmoid.configuration.tilesLocked
+					}
+
+					PlasmaExtras.MenuItem {
+						icon: plasmoid.configuration.tilesLocked ? "object-unlocked" : "object-locked"
+						text: plasmoid.configuration.tilesLocked ? i18n("Unlock Tiles") : i18n("Lock Tiles")
+						onClicked: {
+							plasmoid.configuration.tilesLocked = !plasmoid.configuration.tilesLocked
+						}
 					}
 				}
 
-				TileGridPresets {
-					id: tileGridPresets
-					visible: !plasmoid.configuration.tilesLocked
-				}
-
-				PlasmaExtras.MenuItem {
-					icon: plasmoid.configuration.tilesLocked ? "object-unlocked" : "object-locked"
-					text: plasmoid.configuration.tilesLocked ? i18n("Unlock Tiles") : i18n("Lock Tiles")
-					onClicked: {
-						plasmoid.configuration.tilesLocked = !plasmoid.configuration.tilesLocked
-					}
-				}
-			}
-
-			Repeater {
-				id: tileModelRepeater
-				model: tileModel
-				// onCountChanged: console.log('onCountChanged', count)
+				Repeater {
+					id: tileModelRepeater
+					model: tileModel
+					// onCountChanged: console.log('onCountChanged', count)
 				
-				TileItem {
-					id: tileItem
-				}
+					TileItem {
+						id: tileItem
+					}
 				
+				}
 			}
 		}
 	}

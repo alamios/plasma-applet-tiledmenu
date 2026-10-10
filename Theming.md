@@ -1,8 +1,18 @@
+# Plasma 6 theming
+
+This branch targets Plasma 6.6. SVG frames use `org.kde.ksvg` and icons use
+`Kirigami.Icon`; colors are obtained from `Kirigami.Theme`. The historical
+`theme.backgroundColor` and `theme.buttonBackgroundColor` names below correspond
+to `Kirigami.Theme.backgroundColor` and `Kirigami.Theme.buttonBackgroundColor`.
+Qt5Compat GraphicalEffects remains a runtime dependency for outline effects.
+The old Oxygen-only background override now follows the active Kirigami color.
+Check both light and dark Plasma styles when testing changes.
+
 Fair warning, I might look for `widgets/tilemenu.svg` in the future for a the tile background (normal/hover) + sidebar (closed/opened) + sidebar buttons (normal/hover/pressed). So don't get toooo comfortable since I'm still developing this widget.
 
 ## Desktop Theme .svgs
 
-https://techbase.kde.org/Development/Tutorials/Plasma5/ThemeDetails
+https://develop.kde.org/docs/plasma/theme/
 
 * Sidebar / Power Menu
 	* Background

@@ -1510,7 +1510,8 @@ def kpac_localetest(kpackage, args):
 
 
 def kpac_build(kpackage, args):
-	kpackage.i18nMerge()
+	if args.merge:
+		kpackage.i18nMerge()
 	kpackage.i18nBuild()
 	if kpackage.containsGitChanges(path=kpackage.translateDir):
 		echoError("[kpac-build] Changes detected. Cancelling build.")
@@ -1626,6 +1627,7 @@ def main():
 
 	parser_build = subparsers.add_parser('build', help='kpac build')
 	parser_build.set_defaults(func=kpac_build)
+	parser_build.add_argument('--no-merge', dest='merge', action='store_false', default=True, help='Build without updating translation sources')
 	parser_build.add_argument('--dryrun', action='store_true', default=False)
 	parser_build.add_argument('--tag', dest='buildTag', default=filenameTag)
 

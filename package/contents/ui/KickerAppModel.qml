@@ -11,7 +11,7 @@ Kicker.SimpleFavoritesModel {
 	onTriggerIndex: {
 		var closeRequested = kickerAppModel.trigger(index, "", null)
 		if (closeRequested) {
-			plasmoid.expanded = false
+			widget.expanded = false
 		}
 	}
 
@@ -19,7 +19,7 @@ Kicker.SimpleFavoritesModel {
 	onTriggerIndexAction: {
 		var closeRequested = kickerAppModel.trigger(index, actionId, actionArgument)
 		if (closeRequested) {
-			plasmoid.expanded = false
+			widget.expanded = false
 		}
 	}
 

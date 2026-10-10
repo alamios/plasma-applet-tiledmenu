@@ -91,13 +91,7 @@ Item {
 	}
 
 	//--- Colors
-	readonly property color themeButtonBgColor: {
-		if (PlasmaCore.Theme.themeName == "oxygen") {
-			return "#20FFFFFF"
-		} else {
-			return Kirigami.Theme.backgroundColor
-		}
-	}
+	readonly property color themeButtonBgColor: Kirigami.Theme.backgroundColor
 	readonly property color defaultTileColor: plasmoid.configuration.defaultTileColor || themeButtonBgColor
 	readonly property bool defaultTileGradient: plasmoid.configuration.defaultTileGradient
 	readonly property color sidebarBackgroundColor: plasmoid.configuration.sidebarBackgroundColor || Kirigami.Theme.backgroundColor

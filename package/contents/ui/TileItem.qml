@@ -71,7 +71,9 @@ Item {
 			pressY = mouse.y
 		}
 
-		drag.target: plasmoid.configuration.tilesLocked ? undefined : tileItem
+		preventStealing: true
+		drag.smoothed: false
+		drag.target: plasmoid.configuration.tilesLocked ? null : tileItem
 		// drag.onActiveChanged: console.log('drag.active', drag.active)
 
 		// This MouseArea will spam "QQuickItem::ungrabMouse(): Item is not the mouse grabber."
@@ -91,17 +93,18 @@ Item {
 		}
 	}
 
-	Drag.dragType: Drag.Automatic
+	Drag.dragType: Drag.Internal
+	Drag.hotSpot: Qt.point(tileMouseArea.pressX, tileMouseArea.pressY)
 	Drag.proposedAction: Qt.MoveAction
 
 	// We use this drag pattern to use the internal drag with events.
 	// https://stackoverflow.com/a/24729837/947742
 	readonly property bool dragActive: tileMouseArea.drag.active
-	onDragActiveChanged: function(dragActive) {
-		if (dragActive) {
+	onDragActiveChanged: {
+		if (tileItem.dragActive) {
 			// console.log("drag started")
 			// console.log('onDragStarted', JSON.stringify(modelData), index, tileModel.length)
-			tileGrid.startDrag(index)
+			tileGrid.startDrag(index, tileMouseArea.pressX, tileMouseArea.pressY)
 			// tileGrid.dropOffsetX = 0
 			// tileGrid.dropOffsetY = 0
 			tileItem.z = 1
