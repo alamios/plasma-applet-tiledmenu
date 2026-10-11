@@ -1,8 +1,13 @@
 # Tiled Menu
 
 Tiled Menu is an application launcher for **KDE Plasma 6.6**, inspired by the
-Windows 10 Start Menu. This [independent fork](https://github.com/alamios/plasma-applet-tiledmenu)
-provides configurable tiles, application search and sidebar shortcuts.
+Windows 10 Start Menu.
+
+> [!NOTE]
+> **This fork is maintained for personal use.** It has only been tested
+> on my own system: **Kubuntu 26.04, AMD64 (x86_64)**, with Plasma **6.6.6**, Qt
+> **6.10.2** and KDE Frameworks **6.24**. Compatibility with other distributions,
+> architectures or software versions has not been verified.
 
 The current version is **46.2**. Versions are distributed as source code on
 GitHub; build the installable widget locally using the instructions below.
@@ -20,8 +25,7 @@ Tile groups are labeled areas of the grid; nested tile folders are not supported
 
 ## Requirements
 
-The validated environment is Plasma **6.6.6**, Qt **6.10.2** and KDE Frameworks
-**6.24**. The widget uses Plasma 6 QML modules, including Kirigami, KSvg, Plasma
+The widget uses Plasma 6 QML modules, including Kirigami, KSvg, Plasma
 components, Kicker and Qt5Compat GraphicalEffects. It does not require a C++ build.
 Python 3 and gettext are needed to build the package from source.
 
