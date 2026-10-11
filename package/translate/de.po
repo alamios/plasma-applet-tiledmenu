@@ -1,14 +1,15 @@
 # Translation of tiledmenu in de
 # Copyright (C) 2016
+# Additional translations maintained by the independent Tiled Menu fork, 2026.
 # This file is distributed under the same license as the tiledmenu package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
-"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
+"Report-Msgid-Bugs-To: https://github.com/alamios/plasma-applet-tiledmenu\n"
 "POT-Creation-Date: 2024-03-14 04:37-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-10-11 21:00+0200\n"
 "Last-Translator: Ruman Gerst <rumangerst@gmail.com>\n"
 "Language-Team: German <LL@li.org>\n"
 "Language: de\n"
@@ -18,11 +19,11 @@ msgstr ""
 
 #: ../metadata.json
 msgid "Tiled Menu"
-msgstr ""
+msgstr "Tiled Menu"
 
 #: ../metadata.json
 msgid "A menu based on Windows 10's Start Menu."
-msgstr ""
+msgstr "Ein Menü nach dem Vorbild des Startmenüs von Windows 10."
 
 #: ../contents/config/config.qml
 msgid "General"
@@ -126,7 +127,7 @@ msgstr "Rechts"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Group Text Alignment"
-msgstr ""
+msgstr "Ausrichtung des Gruppentexts"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar"
@@ -146,7 +147,7 @@ msgstr "Kontextmenu Knopfgröße"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Theme"
-msgstr ""
+msgstr "Design"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar Shortcuts"
@@ -162,7 +163,7 @@ msgstr "Suchleiste"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Hide Search Field"
-msgstr ""
+msgstr "Suchfeld ausblenden"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search Field Height"
@@ -170,7 +171,7 @@ msgstr "Höhe Suchleiste"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search Box Theme"
-msgstr ""
+msgstr "Design des Suchfelds"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Windows (White)"
@@ -226,7 +227,7 @@ msgstr "Darunter"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "App History"
-msgstr ""
+msgstr "Anwendungsverlauf"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Show:"
@@ -523,3 +524,7 @@ msgstr "Sortiere Kacheln"
 
 #~ msgid "Settings"
 #~ msgstr "Einstellungen"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr "Kontextmenü"

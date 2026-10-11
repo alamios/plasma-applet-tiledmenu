@@ -1,5 +1,5 @@
 #!/bin/bash
-# Plasma 6 development build
+# Local Plasma 6 package build
 set -euo pipefail
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
 
@@ -13,12 +13,12 @@ filenameTag=`echo "$filenameTag" | sed 's/\./\-/'`
 
 function printHelp() {
 	echo "bash ./build --no-merge   Build locally without updating translation sources"
-	echo "bash ./build                For building a .zip for KDE Store"
+	echo "bash ./build              Refresh translations and build a local .plasmoid"
 	echo "bash ./build --i18n-only    To package for distros like Arch we only need to convert"
 	echo "                          translation files .po => .mo with gettext's msgfmt."
 }
 
-# Builds .zip or .plasmoid for uploading to https://store.kde.org
+# Builds the local installable package; GitHub distribution uses source code.
 function buildZip() {
 	python3 ./kpac --dir "$packageDir" --i18ndir "$i18nDir" \
 		build --tag "$filenameTag" "${buildArgs[@]}"

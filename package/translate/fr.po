@@ -1,5 +1,6 @@
 # Translation of tiledmenu in fr
 # Copyright (C) 2016
+# Additional translations maintained by the independent Tiled Menu fork, 2026.
 # This file is distributed under the same license as the tiledmenu package.
 # Arno Pillods <arno.pillods@tutanota.com>, 2019.
 #
@@ -9,9 +10,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
-"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
+"Report-Msgid-Bugs-To: https://github.com/alamios/plasma-applet-tiledmenu\n"
 "POT-Creation-Date: 2024-03-14 04:37-0400\n"
-"PO-Revision-Date: 2021-11-10 13:35+0100\n"
+"PO-Revision-Date: 2026-10-11 21:00+0200\n"
 "Last-Translator: Alan Paris <Alan90000@yahoo.com>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -130,7 +131,7 @@ msgstr "Droite"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Group Text Alignment"
-msgstr ""
+msgstr "Alignement du texte des groupes"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar"
@@ -532,3 +533,7 @@ msgstr "Trier les Tuiles"
 
 #~ msgid "Settings"
 #~ msgstr "Configuration"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr "Menu contextuel"

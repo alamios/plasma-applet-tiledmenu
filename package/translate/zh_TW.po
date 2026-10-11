@@ -1,14 +1,15 @@
 # Translation of tiledmenu in zh_TW
 # Copyright (C) 2022
+# Additional translations maintained by the independent Tiled Menu fork, 2026.
 # This file is distributed under the same license as the tiledmenu package.
 #
 # Kisaragi Hiu <mail@kisaragi-hiu.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
-"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
+"Report-Msgid-Bugs-To: https://github.com/alamios/plasma-applet-tiledmenu\n"
 "POT-Creation-Date: 2024-03-14 04:37-0400\n"
-"PO-Revision-Date: 2022-08-21 00:40+0900\n"
+"PO-Revision-Date: 2026-10-11 21:00+0200\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <kde-i18n-doc@kde.org>\n"
 "Language: zh_TW\n"
@@ -492,3 +493,7 @@ msgstr "使用預設方塊磚佈局"
 #: ../contents/ui/TileItem.qml
 msgid "Sort Tiles"
 msgstr "排序方塊磚"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr "右鍵選單"

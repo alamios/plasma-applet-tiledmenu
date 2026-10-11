@@ -7,7 +7,7 @@
 				"Name": "Chris Holland"
 			}
 		],
-		"BugReportUrl": "https://github.com/Zren/plasma-applet-tiledmenu/issues",
+		"BugReportUrl": "https://github.com/alamios/plasma-applet-tiledmenu/issues",
 		"Category": "Application Launchers",
 		"Description": "A menu based on Windows 10's Start Menu.",
 		"Description[es]": "Menú basado en el menú de inicio de Windows 10",
@@ -40,8 +40,22 @@
 		"Name[sl]": "Meni s ploščicami",
 		"Name[tr]": "Döşeli Menü",
 		"Name[zh_TW]": "方塊磚選單",
-		"Version": "46.1",
-		"Website": "https://github.com/Zren/plasma-applet-tiledmenu"
+		"Version": "46.2",
+		"Website": "https://github.com/alamios/plasma-applet-tiledmenu",
+		"Name[de]": "Tiled Menu",
+		"Description[de]": "Ein Menü nach dem Vorbild des Startmenüs von Windows 10.",
+		"Name[hr]": "Izbornik s pločicama",
+		"Description[hr]": "Izbornik temeljen na izborniku Start sustava Windows 10.",
+		"Name[id]": "Tiled Menu",
+		"Description[id]": "Menu berdasarkan Menu Mulai Windows 10.",
+		"Name[pl]": "Menu kafelkowe",
+		"Description[pl]": "Menu wzorowane na menu Start systemu Windows 10.",
+		"Name[pt]": "Tiled Menu",
+		"Description[pt]": "Um menu baseado no menu Iniciar do Windows 10.",
+		"Name[ro]": "Meniu cu dale",
+		"Description[ro]": "Un meniu bazat pe meniul Start din Windows 10.",
+		"Name[zh_CN]": "磁贴菜单",
+		"Description[zh_CN]": "基于 Windows 10 开始菜单的菜单。"
 	},
 	"X-Plasma-API-Minimum-Version": "6.0",
 	"X-Plasma-Provides": [

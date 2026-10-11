@@ -1,14 +1,15 @@
 # Translation of tiledmenu in he
 # Copyright (C) 2020
+# Additional translations maintained by the independent Tiled Menu fork, 2026.
 # This file is distributed under the same license as the tiledmenu package.
 #
 # Omer I.S. <omeritzicschwartz@gmail.com>, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
-"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
+"Report-Msgid-Bugs-To: https://github.com/alamios/plasma-applet-tiledmenu\n"
 "POT-Creation-Date: 2024-03-14 04:37-0400\n"
-"PO-Revision-Date: 2021-03-15 12:27+0200\n"
+"PO-Revision-Date: 2026-10-11 21:00+0200\n"
 "Last-Translator: Omer I.S. <omeritzicschwartz@gmail.com>\n"
 "Language-Team: Hebrew <kde-i18n-he@kde.org>\n"
 "Language: he\n"
@@ -119,7 +120,7 @@ msgstr "כיוון טקסט"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Left"
-msgstr "ימין"
+msgstr "שמאל"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Center"
@@ -127,11 +128,11 @@ msgstr "מרכז"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Right"
-msgstr "שמאל"
+msgstr "ימין"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Group Text Alignment"
-msgstr ""
+msgstr "יישור טקסט הקבוצה"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar"
@@ -501,3 +502,7 @@ msgstr "מיון אריחים"
 
 #~ msgid "Desktop Theme (%1)"
 #~ msgstr "ערכת הנושא של שולחן העבודה (%1)"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr "תפריט לחיצה ימנית"

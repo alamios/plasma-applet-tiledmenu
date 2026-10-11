@@ -1,14 +1,15 @@
 # Translation of tiledmenu in ru
 # Copyright (C) 2018 Senkin Nikita <niksnbfmail@gmail.com>
+# Additional translations maintained by the independent Tiled Menu fork, 2026.
 # This file is distributed under the same license as the tiledmenu package.
 # Senkin Nikita <niksnbfmail@gmail.com>, YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
-"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
+"Report-Msgid-Bugs-To: https://github.com/alamios/plasma-applet-tiledmenu\n"
 "POT-Creation-Date: 2024-03-14 04:37-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-10-11 21:00+0200\n"
 "Last-Translator: Senkin Nikita <niksnbfmail@gmail.com>\n"
 "Language-Team: Niksn <LL@li.org>\n"
 "Language: ru\n"
@@ -126,7 +127,7 @@ msgstr "Справа"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Group Text Alignment"
-msgstr ""
+msgstr "Выравнивание текста группы"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar"
@@ -146,7 +147,7 @@ msgstr "Высота Всплывающей Кнопки"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Theme"
-msgstr ""
+msgstr "Тема"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar Shortcuts"
@@ -170,7 +171,7 @@ msgstr "Высота Поля Поиска"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search Box Theme"
-msgstr ""
+msgstr "Тема поля поиска"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Windows (White)"
@@ -226,7 +227,7 @@ msgstr "Ниже"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "App History"
-msgstr ""
+msgstr "История приложений"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Show:"
@@ -500,3 +501,7 @@ msgstr "Отсортировать Плитки"
 
 #~ msgid "Show recent applications"
 #~ msgstr "Показать недавние приложения"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr "Меню правой кнопки мыши"

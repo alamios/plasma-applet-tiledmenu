@@ -1,14 +1,15 @@
 # Translation of tiledmenu in pt_BR
 # Copyright (C) 2019
+# Additional translations maintained by the independent Tiled Menu fork, 2026.
 # This file is distributed under the same license as the tiledmenu package.
 #
 # Thiago Masato Costa Sueto <herzenschein@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
-"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
+"Report-Msgid-Bugs-To: https://github.com/alamios/plasma-applet-tiledmenu\n"
 "POT-Creation-Date: 2024-03-14 04:37-0400\n"
-"PO-Revision-Date: 2019-07-12 11:44-0300\n"
+"PO-Revision-Date: 2026-10-11 21:00+0200\n"
 "Last-Translator: Thiago Masato Costa Sueto <herzenschein@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -128,7 +129,7 @@ msgstr "Direita"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Group Text Alignment"
-msgstr ""
+msgstr "Alinhamento do texto dos grupos"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar"
@@ -148,7 +149,7 @@ msgstr "Altura do botão Popup"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar Shortcuts"
@@ -172,7 +173,7 @@ msgstr "Altura do campo de pesquisa"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search Box Theme"
-msgstr ""
+msgstr "Tema da caixa de pesquisa"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Windows (White)"
@@ -228,7 +229,7 @@ msgstr "Abaixo"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "App History"
-msgstr ""
+msgstr "Histórico de aplicativos"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Show:"
@@ -450,7 +451,7 @@ msgstr "Explorar"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Gmail"
-msgstr ""
+msgstr "Gmail"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Software Center"
@@ -498,3 +499,7 @@ msgstr "Organizar ladrilhos"
 
 #~ msgid "Desktop Theme (%1)"
 #~ msgstr "Tema da área de trabalho (%1)"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr "Menu de contexto"

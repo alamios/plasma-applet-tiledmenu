@@ -1,14 +1,15 @@
 # Translation of tiledmenu in ro
 # Copyright (C) 2020
+# Additional translations maintained by the independent Tiled Menu fork, 2026.
 # This file is distributed under the same license as the tiledmenu package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
-"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
+"Report-Msgid-Bugs-To: https://github.com/alamios/plasma-applet-tiledmenu\n"
 "POT-Creation-Date: 2024-03-14 04:37-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-10-11 21:00+0200\n"
 "Last-Translator: Istrate Sebastian <istratesebastian@yahoo.com>\n"
 "Language-Team: Romanian\n"
 "Language: ro\n"
@@ -18,11 +19,11 @@ msgstr ""
 
 #: ../metadata.json
 msgid "Tiled Menu"
-msgstr ""
+msgstr "Meniu cu dale"
 
 #: ../metadata.json
 msgid "A menu based on Windows 10's Start Menu."
-msgstr ""
+msgstr "Un meniu bazat pe meniul Start din Windows 10."
 
 #: ../contents/config/config.qml
 msgid "General"
@@ -126,7 +127,7 @@ msgstr "Dreapta"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Group Text Alignment"
-msgstr ""
+msgstr "Alinierea textului grupului"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar"
@@ -146,7 +147,7 @@ msgstr "Înălțime buton Popup"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Theme"
-msgstr ""
+msgstr "Temă"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar Shortcuts"
@@ -162,7 +163,7 @@ msgstr "Caseta de căutare"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Hide Search Field"
-msgstr ""
+msgstr "Ascundeți câmpul de căutare"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search Field Height"
@@ -170,7 +171,7 @@ msgstr "Înălțimea câmpului de căutare"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search Box Theme"
-msgstr ""
+msgstr "Tema câmpului de căutare"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Windows (White)"
@@ -226,7 +227,7 @@ msgstr "Dedesubt"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "App History"
-msgstr ""
+msgstr "Istoricul aplicațiilor"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Show:"
@@ -431,23 +432,23 @@ msgstr "Poziție / Dimensiune"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Add Preset"
-msgstr ""
+msgstr "Adăugați o presetare"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Productivity"
-msgstr ""
+msgstr "Productivitate"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Explore"
-msgstr ""
+msgstr "Explorați"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Gmail"
-msgstr ""
+msgstr "Gmail"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Software Center"
-msgstr ""
+msgstr "Centru de aplicații"
 
 #: ../contents/ui/TileGrid.qml
 msgid "New Group"
@@ -468,19 +469,19 @@ msgstr "Grup"
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Getting Started"
-msgstr ""
+msgstr "Primii pași"
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Drag apps onto the grid."
-msgstr ""
+msgstr "Trageți aplicațiile pe grilă."
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Drag folders from the file manager here."
-msgstr ""
+msgstr "Trageți aici dosare din managerul de fișiere."
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Use Default Tile Layout"
-msgstr ""
+msgstr "Folosiți aranjamentul implicit al dalelor"
 
 #: ../contents/ui/TileItem.qml
 msgid "Sort Tiles"
@@ -491,3 +492,7 @@ msgstr "Sortează Dalele"
 
 #~ msgid "Desktop Theme (%1)"
 #~ msgstr "Temă Desktop (%1)"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr "Meniul clicului dreapta"

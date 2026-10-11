@@ -1,14 +1,15 @@
 # Translation of tiledmenu in id
 # Copyright (C) 2019
+# Additional translations maintained by the independent Tiled Menu fork, 2026.
 # This file is distributed under the same license as the tiledmenu package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
-"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
+"Report-Msgid-Bugs-To: https://github.com/alamios/plasma-applet-tiledmenu\n"
 "POT-Creation-Date: 2024-03-14 04:37-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-10-11 21:00+0200\n"
 "Last-Translator: Dika Muhamad A. <ardumpl@gmail.com>\n"
 "Language-Team: Indonesia <LL@li.org>\n"
 "Language: id\n"
@@ -18,11 +19,11 @@ msgstr ""
 
 #: ../metadata.json
 msgid "Tiled Menu"
-msgstr ""
+msgstr "Tiled Menu"
 
 #: ../metadata.json
 msgid "A menu based on Windows 10's Start Menu."
-msgstr ""
+msgstr "Menu berdasarkan Menu Mulai Windows 10."
 
 #: ../contents/config/config.qml
 msgid "General"
@@ -102,7 +103,7 @@ msgstr "Warna Kustom"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Gradient"
-msgstr ""
+msgstr "Gradien"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Transparent"
@@ -126,7 +127,7 @@ msgstr "Kanan"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Group Text Alignment"
-msgstr ""
+msgstr "Perataan Teks Kelompok"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar"
@@ -134,7 +135,7 @@ msgstr "Bilah Sisi"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Width"
-msgstr ""
+msgstr "Lebar"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Icon Size"
@@ -142,11 +143,11 @@ msgstr "Ukuran Ikon"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Popup Button Height"
-msgstr ""
+msgstr "Tinggi Tombol Popup"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar Shortcuts"
@@ -162,7 +163,7 @@ msgstr "Kotak Pencarian"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Hide Search Field"
-msgstr ""
+msgstr "Sembunyikan Kotak Pencarian"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search Field Height"
@@ -170,7 +171,7 @@ msgstr "Tinggi Kotak Pencarian"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search Box Theme"
-msgstr ""
+msgstr "Tema Kotak Pencarian"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Windows (White)"
@@ -226,7 +227,7 @@ msgstr "Di bawah Nama Aplikasi"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "App History"
-msgstr ""
+msgstr "Riwayat Aplikasi"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Show:"
@@ -431,19 +432,19 @@ msgstr "Posisi / Ukuran"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Add Preset"
-msgstr ""
+msgstr "Tambahkan Preset"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Productivity"
-msgstr ""
+msgstr "Produktivitas"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Explore"
-msgstr ""
+msgstr "Jelajahi"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Gmail"
-msgstr ""
+msgstr "Gmail"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Software Center"
@@ -468,19 +469,19 @@ msgstr "Kelompok"
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Getting Started"
-msgstr ""
+msgstr "Memulai"
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Drag apps onto the grid."
-msgstr ""
+msgstr "Seret aplikasi ke grid."
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Drag folders from the file manager here."
-msgstr ""
+msgstr "Seret folder dari manajer berkas ke sini."
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Use Default Tile Layout"
-msgstr ""
+msgstr "Gunakan Tata Letak Ubin Default"
 
 #: ../contents/ui/TileItem.qml
 msgid "Sort Tiles"
@@ -497,3 +498,7 @@ msgstr "Urutkan Ubin"
 
 #~ msgid "Apps"
 #~ msgstr "Aplikasi"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr "Menu Klik Kanan"

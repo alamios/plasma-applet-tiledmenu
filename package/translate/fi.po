@@ -1,14 +1,15 @@
 # Translation of tiledmenu in fi
 # Copyright (C) 2021
+# Additional translations maintained by the independent Tiled Menu fork, 2026.
 # This file is distributed under the same license as the tiledmenu package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
-"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
+"Report-Msgid-Bugs-To: https://github.com/alamios/plasma-applet-tiledmenu\n"
 "POT-Creation-Date: 2024-03-14 04:37-0400\n"
-"PO-Revision-Date: 2021-06-09 18:00+0300\n"
+"PO-Revision-Date: 2026-10-11 21:00+0200\n"
 "Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -128,7 +129,7 @@ msgstr "Oikea"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Group Text Alignment"
-msgstr ""
+msgstr "Ryhmän tekstin tasaus"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar"
@@ -148,7 +149,7 @@ msgstr "Ilmoitus painikkeen korkeus"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Theme"
-msgstr ""
+msgstr "Teema"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar Shortcuts"
@@ -172,7 +173,7 @@ msgstr "Hakukentän korkeus"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search Box Theme"
-msgstr ""
+msgstr "Hakulaatikon teema"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Windows (White)"
@@ -228,7 +229,7 @@ msgstr "Alla"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "App History"
-msgstr ""
+msgstr "Sovellushistoria"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Show:"
@@ -495,3 +496,7 @@ msgstr "Järjestä laatat"
 
 #~ msgid "<b>Version:</b> %1"
 #~ msgstr "<b>Versio:</b> %1"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr "Kontekstivalikko"

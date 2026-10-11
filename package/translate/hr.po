@@ -1,16 +1,17 @@
 # Translation of tiledmenu in hr
 # Copyright (C) 2019
+# Additional translations maintained by the independent Tiled Menu fork, 2026.
 # This file is distributed under the same license as the tiledmenu package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
-"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
+"Report-Msgid-Bugs-To: https://github.com/alamios/plasma-applet-tiledmenu\n"
 "POT-Creation-Date: 2024-03-14 04:37-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-10-11 21:00+0200\n"
 "Last-Translator: Vladimir Mikulic <vladimir.mikulic2@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: hr\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,11 +19,11 @@ msgstr ""
 
 #: ../metadata.json
 msgid "Tiled Menu"
-msgstr ""
+msgstr "Izbornik s pločicama"
 
 #: ../metadata.json
 msgid "A menu based on Windows 10's Start Menu."
-msgstr ""
+msgstr "Izbornik temeljen na izborniku Start sustava Windows 10."
 
 #: ../contents/config/config.qml
 msgid "General"
@@ -102,7 +103,7 @@ msgstr "Boja po volji"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Gradient"
-msgstr ""
+msgstr "Gradijent"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Transparent"
@@ -114,27 +115,27 @@ msgstr "Položaj Teksta"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Left"
-msgstr ""
+msgstr "Lijevo"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Center"
-msgstr ""
+msgstr "Sredina"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Right"
-msgstr ""
+msgstr "Desno"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Group Text Alignment"
-msgstr ""
+msgstr "Položaj teksta grupe"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar"
-msgstr ""
+msgstr "Bočna traka"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Width"
-msgstr ""
+msgstr "Širina"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Icon Size"
@@ -142,11 +143,11 @@ msgstr "Veličina Ikone"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Popup Button Height"
-msgstr ""
+msgstr "Visina gumba skočnog izbornika"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar Shortcuts"
@@ -162,7 +163,7 @@ msgstr "Tražilica"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Hide Search Field"
-msgstr ""
+msgstr "Sakrij polje za pretraživanje"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search Field Height"
@@ -170,7 +171,7 @@ msgstr "Visina tražilice"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search Box Theme"
-msgstr ""
+msgstr "Tema tražilice"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Windows (White)"
@@ -226,19 +227,19 @@ msgstr "Ispod"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "App History"
-msgstr ""
+msgstr "Povijest aplikacija"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Show:"
-msgstr ""
+msgstr "Prikaži:"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Recent applications"
-msgstr ""
+msgstr "Nedavne aplikacije"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Often used applications"
-msgstr ""
+msgstr "Često korištene aplikacije"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search Results"
@@ -431,23 +432,23 @@ msgstr "Pozicija / Veličina"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Add Preset"
-msgstr ""
+msgstr "Dodaj predložak"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Productivity"
-msgstr ""
+msgstr "Produktivnost"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Explore"
-msgstr ""
+msgstr "Istraži"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Gmail"
-msgstr ""
+msgstr "Gmail"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Software Center"
-msgstr ""
+msgstr "Centar za softver"
 
 #: ../contents/ui/TileGrid.qml
 msgid "New Group"
@@ -468,19 +469,19 @@ msgstr "Grupa"
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Getting Started"
-msgstr ""
+msgstr "Prvi koraci"
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Drag apps onto the grid."
-msgstr ""
+msgstr "Povucite aplikacije na mrežu."
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Drag folders from the file manager here."
-msgstr ""
+msgstr "Povucite mape iz upravitelja datoteka ovamo."
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Use Default Tile Layout"
-msgstr ""
+msgstr "Koristi zadani raspored pločica"
 
 #: ../contents/ui/TileItem.qml
 msgid "Sort Tiles"
@@ -491,3 +492,7 @@ msgstr "Sortiraj Pločice"
 
 #~ msgid "Desktop Theme (%1)"
 #~ msgstr "Desktop Tema"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr "Izbornik desnog klika"

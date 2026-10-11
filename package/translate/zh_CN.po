@@ -1,14 +1,15 @@
 # Translation of tiledmenu in zh_CN
 # Copyright (C) 2018
+# Additional translations maintained by the independent Tiled Menu fork, 2026.
 # This file is distributed under the same license as the tiledmenu package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
-"Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
+"Report-Msgid-Bugs-To: https://github.com/alamios/plasma-applet-tiledmenu\n"
 "POT-Creation-Date: 2024-03-14 04:37-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-10-11 21:00+0200\n"
 "Last-Translator: Lin Mu <linmu789632@gmail.com>\n"
 "Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
 "Language: zh_CN\n"
@@ -18,11 +19,11 @@ msgstr ""
 
 #: ../metadata.json
 msgid "Tiled Menu"
-msgstr ""
+msgstr "磁贴菜单"
 
 #: ../metadata.json
 msgid "A menu based on Windows 10's Start Menu."
-msgstr ""
+msgstr "基于 Windows 10 开始菜单的菜单。"
 
 #: ../contents/config/config.qml
 msgid "General"
@@ -30,7 +31,7 @@ msgstr "一般"
 
 #: ../contents/config/config.qml
 msgid "Import/Export Layout"
-msgstr ""
+msgstr "导入/导出布局"
 
 #: ../contents/config/config.qml
 msgid "Advanced"
@@ -50,11 +51,11 @@ msgstr "添加到任务栏"
 
 #: ../contents/ui/AppsModel.qml
 msgid "Recent Apps"
-msgstr ""
+msgstr "最近使用的应用"
 
 #: ../contents/ui/AppsModel.qml
 msgid "Most Used"
-msgstr ""
+msgstr "最常使用"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Popup"
@@ -66,7 +67,7 @@ msgstr "全屏"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Grid Columns"
-msgstr ""
+msgstr "网格列数"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "px"
@@ -78,7 +79,7 @@ msgstr "面板图标"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Fixed Size"
-msgstr "修复大小"
+msgstr "固定大小"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Tiles"
@@ -102,7 +103,7 @@ msgstr "自定义颜色"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Gradient"
-msgstr ""
+msgstr "渐变"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Transparent"
@@ -126,7 +127,7 @@ msgstr "右"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Group Text Alignment"
-msgstr ""
+msgstr "群组文字对齐"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar"
@@ -134,7 +135,7 @@ msgstr "侧栏"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Width"
-msgstr ""
+msgstr "宽度"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Icon Size"
@@ -142,11 +143,11 @@ msgstr "图标大小"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Popup Button Height"
-msgstr ""
+msgstr "弹出菜单按钮高度"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Theme"
-msgstr ""
+msgstr "主题"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar Shortcuts"
@@ -162,7 +163,7 @@ msgstr "搜索框"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Hide Search Field"
-msgstr ""
+msgstr "隐藏搜索框"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search Field Height"
@@ -170,7 +171,7 @@ msgstr "搜索区域高度"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search Box Theme"
-msgstr ""
+msgstr "搜索框主题"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Windows (White)"
@@ -186,7 +187,7 @@ msgstr "应用列表区域宽度"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Default View"
-msgstr ""
+msgstr "默认视图"
 
 #: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/SidebarView.qml
 msgid "Alphabetical"
@@ -198,15 +199,15 @@ msgstr "分组"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Jump To Letter"
-msgstr ""
+msgstr "跳转到字母"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Jump To Category"
-msgstr ""
+msgstr "跳转到分类"
 
 #: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/SidebarView.qml
 msgid "Tiles Only"
-msgstr ""
+msgstr "仅显示磁贴"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "App Description"
@@ -226,7 +227,7 @@ msgstr "下方"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "App History"
-msgstr ""
+msgstr "应用历史记录"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Show:"
@@ -254,7 +255,7 @@ msgstr "分类（应用菜单/仪表板）"
 
 #: ../contents/ui/config/ConfigurationShortcuts.qml
 msgid "When this widget has a global shortcut set, like 'Alt+F1', Plasma will open this menu with just the ⊞ Windows / Meta key."
-msgstr ""
+msgstr "为此部件设置全局快捷键（如 Alt+F1）后，只需按下 ⊞ Windows / Meta 键，Plasma 就会打开此菜单。"
 
 #: ../contents/ui/main.qml
 msgid "System Info"
@@ -378,9 +379,8 @@ msgid "Filters"
 msgstr "过滤器"
 
 #: ../contents/ui/SidebarView.qml
-#, fuzzy
 msgid "User Manager"
-msgstr "用户管理程序"
+msgstr "用户管理器"
 
 #: ../contents/ui/SidebarView.qml
 msgid "Power"
@@ -424,7 +424,7 @@ msgstr "图片文件 (*.png *.jpg *.jpeg *.bmp *.svg *.svgz)"
 
 #: ../contents/ui/TileEditorView.qml
 msgid "Preset Tiles"
-msgstr ""
+msgstr "预设磁贴"
 
 #: ../contents/ui/TileEditorView.qml
 msgid "Position / Size"
@@ -432,19 +432,19 @@ msgstr "位置/大小"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Add Preset"
-msgstr ""
+msgstr "添加预设"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Productivity"
-msgstr ""
+msgstr "生产力"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Explore"
-msgstr ""
+msgstr "探索"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Gmail"
-msgstr ""
+msgstr "Gmail"
 
 #: ../contents/ui/TileGridPresets.qml
 msgid "Software Center"
@@ -469,23 +469,23 @@ msgstr "群组"
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Getting Started"
-msgstr ""
+msgstr "开始使用"
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Drag apps onto the grid."
-msgstr ""
+msgstr "将应用拖到网格上。"
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Drag folders from the file manager here."
-msgstr ""
+msgstr "将文件夹从文件管理器拖到此处。"
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Use Default Tile Layout"
-msgstr ""
+msgstr "使用默认磁贴布局"
 
 #: ../contents/ui/TileItem.qml
 msgid "Sort Tiles"
-msgstr ""
+msgstr "排序磁贴"
 
 #~ msgid "<b>Version:</b> %1"
 #~ msgstr "<b>版本：</b> %1"
@@ -504,3 +504,7 @@ msgstr ""
 
 #~ msgid "Default Order"
 #~ msgstr "默认顺序"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr "右键菜单"

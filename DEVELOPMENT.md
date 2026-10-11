@@ -97,6 +97,9 @@ restart. Use both light and dark themes.
 
 ## Packaging
 
+Versions are distributed as source code on GitHub. The widget archive is built
+locally for installation and verification; it is not a published release asset.
+
 ```bash
 bash ./build --no-merge
 ```

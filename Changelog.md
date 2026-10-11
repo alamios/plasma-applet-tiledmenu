@@ -1,11 +1,14 @@
 # Changelog
 
-## Unreleased
+## 46.2
 
-- Complete the Spanish catalog, including the application-command settings, and
-  correct the URL and layout labels.
+- Complete all 20 translation catalogs against the current 118-message template,
+  including the application-command settings. Correct the Spanish URL and layout
+  labels.
 - Preserve the maintained translation guide when refreshing catalogs; print
   coverage in the terminal instead.
+- Consolidate the fork's documentation and clarify source-only distribution on
+  GitHub.
 
 ## 46.1
 

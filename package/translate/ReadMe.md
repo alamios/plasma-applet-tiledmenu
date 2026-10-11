@@ -64,29 +64,30 @@ catalog updates before packaging.
 ## Catalog review
 
 Coverage against the current 118-message template, reviewed on 2026-10-11.
-Pending counts include untranslated or fuzzy messages; they require language
-review before being considered complete. The Spanish catalog has been completed.
+All 20 supported catalogs contain translations for every current message, with
+no pending or fuzzy entries. This measures coverage; contributions improving
+wording and regional terminology are welcome.
 Run the extraction workflow again after changing source strings.
 
 | Locale | Compiled translations | Pending |
 | --- | ---: | ---: |
-| `de` | 110 | 8 |
+| `de` | 118 | 0 |
 | `es` | 118 | 0 |
-| `fa` | 117 | 1 |
-| `fi` | 113 | 5 |
-| `fr` | 116 | 2 |
-| `he` | 116 | 2 |
-| `hr` | 91 | 27 |
-| `id` | 99 | 19 |
-| `ja` | 117 | 1 |
-| `ko` | 114 | 4 |
-| `nl` | 117 | 1 |
-| `pl` | 101 | 17 |
-| `pt` | 96 | 22 |
-| `pt_BR` | 112 | 6 |
-| `ro` | 101 | 17 |
-| `ru` | 113 | 5 |
-| `sl` | 112 | 6 |
-| `tr` | 112 | 6 |
-| `zh_CN` | 87 | 31 |
-| `zh_TW` | 117 | 1 |
+| `fa` | 118 | 0 |
+| `fi` | 118 | 0 |
+| `fr` | 118 | 0 |
+| `he` | 118 | 0 |
+| `hr` | 118 | 0 |
+| `id` | 118 | 0 |
+| `ja` | 118 | 0 |
+| `ko` | 118 | 0 |
+| `nl` | 118 | 0 |
+| `pl` | 118 | 0 |
+| `pt` | 118 | 0 |
+| `pt_BR` | 118 | 0 |
+| `ro` | 118 | 0 |
+| `ru` | 118 | 0 |
+| `sl` | 118 | 0 |
+| `tr` | 118 | 0 |
+| `zh_CN` | 118 | 0 |
+| `zh_TW` | 118 | 0 |
