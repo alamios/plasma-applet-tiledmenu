@@ -1,64 +1,38 @@
-# Plasma 6 theming
+# Theming
 
-This branch targets Plasma 6.6. SVG frames use `org.kde.ksvg` and icons use
-`Kirigami.Icon`; colors are obtained from `Kirigami.Theme`. The historical
-`theme.backgroundColor` and `theme.buttonBackgroundColor` names below correspond
-to `Kirigami.Theme.backgroundColor` and `Kirigami.Theme.buttonBackgroundColor`.
-Qt5Compat GraphicalEffects remains a runtime dependency for outline effects.
-The old Oxygen-only background override now follows the active Kirigami color.
-Check both light and dark Plasma styles when testing changes.
+Tiled Menu uses Plasma style assets through `org.kde.ksvg`, icons through
+`Kirigami.Icon`, and colors through `Kirigami.Theme`.
 
-Fair warning, I might look for `widgets/tilemenu.svg` in the future for a the tile background (normal/hover) + sidebar (closed/opened) + sidebar buttons (normal/hover/pressed). So don't get toooo comfortable since I'm still developing this widget.
+## Colors and backgrounds
 
-## Desktop Theme .svgs
+The default tile background and sidebar color use `Kirigami.Theme.backgroundColor`.
+Highlight and text effects use `Kirigami.Theme.highlightColor` and
+`Kirigami.Theme.textColor`. User-selected colors override the corresponding
+configuration defaults. Each tile can have its own background color, gradient
+or image.
 
-https://develop.kde.org/docs/plasma/theme/
-
-* Sidebar / Power Menu
-	* Background
-		* Defaults to drawing `theme.backgroundColor` at 50% transparency when closed, and 0% transparency when open. It used to be black (`#000`) in older versions.
-		* `widgets/frame.svg` prefix: `raised` Background
-		* Note that `theme.backgroundColor` is drawn undrneath the svg when the sidebar is open since 90% of themes have a transparent image.
-* App List
-	* Items
-		* `widgets/button.svg`
-	* Scrollbar
-		* `widgets/scrollbar.svg`
-* Search Box
-	* `widgets/lineedit.svg`
-
-
-## Color Theme
-
-* `theme.backgroundColor` 
-	* Drawn under the sidebar background svg when using the desktop theme.
-* `theme.buttonBackgroundColor`
-	* The default tile background color.
-
+When style-based sidebar backgrounds are enabled, the sidebar draws the theme
+color beneath `widgets/frame` with the `raised` prefix. The application button
+style uses `widgets/button` with the `normal` and `pressed` prefixes. Qt Quick
+and Plasma controls provide their own styling for text fields and scrollbars.
 
 ## Icons
 
-* Sidebar
-	* `open-menu-symbolic` Menu
-	* `view-sort-ascending-symbolic` Apps
-	* `system-search-symbolic` Search
-	* `open-menu-symbolic` Menu
-	* ...
-	* `folder-open-symbolic` File Manager
-	* `configure` Settings
-	* `system-shutdown-symbolic` Power
-		* `system-lock-screen` Lock
-		* `system-log-out` Logout
-		* `system-save-session` Save Session
-		* `system-switch-user` Switch User
-		* `system-suspend` Suspend
-		* `system-suspend-hibernate` Hibernate
-		* `system-reboot` Reboot
-		* `system-shutdown` Shutdown
-* Search View
-	* Filter Bar
-		* `system-search-symbolic` All/Default Filter
-		* `window` Apps Filter
-		* `document-new` File Filter
-		* `globe` Bookmarks Filter
+Icons are resolved through the active icon theme. Common names include:
 
+| Area | Icon names |
+| --- | --- |
+| Menu navigation | `open-menu-symbolic`, `view-sort-ascending-symbolic`, `system-search-symbolic` |
+| Sidebar shortcuts | `folder-open-symbolic`, `configure`, `system-shutdown-symbolic` |
+| Search filters | `window`, `document-new` |
+| Session actions | `system-lock-screen`, `system-log-out`, `system-switch-user` |
+| Power actions | `system-suspend`, `system-reboot`, `system-shutdown` |
+
+Available session and power actions depend on the system. Custom tiles and the
+panel launcher can use a selected icon or image.
+
+## Validation
+
+Check readable labels, icon contrast, hover/pressed effects, gradients and custom
+background images in light and dark themes and at different display scales.
+Outline effects require Qt5Compat GraphicalEffects.

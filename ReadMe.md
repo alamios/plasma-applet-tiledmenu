@@ -1,102 +1,93 @@
-# Tiled Menu for Plasma 6.6
+# Tiled Menu
 
-This is an independently maintained fork of
-[Zren/plasma-applet-tiledmenu](https://github.com/Zren/plasma-applet-tiledmenu),
-a launcher inspired by Windows 10's Start Menu. It includes compatibility fixes
-for **KDE Plasma 6.6**, legacy installation recovery, and tile drag-and-drop fixes.
+Tiled Menu is an application launcher for **KDE Plasma 6.6**, inspired by the
+Windows 10 Start Menu. This [independent fork](https://github.com/alamios/plasma-applet-tiledmenu)
+provides configurable tiles, application search and sidebar shortcuts.
 
-The original project and its KDE Store listing are maintained by the upstream
-author. This fork is developed separately and is not an official upstream release.
-See the [original KDE Store listing](https://store.kde.org/p/2142716/) for the
-upstream widget.
+## Features
 
-## Repository history
+- Pin applications, files and folders to a tile grid.
+- Resize tiles, customize their labels, colors and background images.
+- Rearrange tiles and move or sort labeled groups.
+- Browse applications alphabetically or by category, and search with KRunner.
+- Customize sidebar shortcuts and use a tiles-only view.
+- Export and import the menu layout.
 
-`main` contains this independent fork. The migration commits are developed on
-`migration/plasma-6.6` and merged into `main` with a merge commit.
-The annotated tag `upstream-baseline` marks the original upstream commit
-`21c8540`, before this fork's changes.
+Tile groups are labeled areas of the grid; nested tile folders are not supported.
 
-* Supports:
-    * Pin/Favourite apps/files through the context menu (or by dragging them from dolphin).
-    * Resizing (permanently) the size of the menu by Meta + Right Clicking and dragging.
-    * Any size tile 1x1, 2x2, 4x4, 4x2, 1x3, etc.
-    * Easily edit the background image of a tile.
-    * Customizable sidebar shortcuts.
-    * Jump to Letter/Category (can also default to this view)
-    * Defaulting to only showing the tiles.
-    * Labeling Groups of Tiles + Move Groups of Tiles + Sorting items in the group
-* Does not support (Win10):
-    * Tile Groups ("Folders")
+## Requirements
 
-## Plasma 6.6 compatibility and installation
+The validated environment is Plasma **6.6.6**, Qt **6.10.2** and KDE Frameworks
+**6.24**. The widget uses Plasma 6 QML modules, including Kirigami, KSvg, Plasma
+components, Kicker and Qt5Compat GraphicalEffects. It does not require a C++ build.
+Python 3 and gettext are needed to build the package from source.
 
-This fork starts from upstream commit `21c8540`, which already includes an initial
-Plasma 6 port. It adds fixes for configuration, launcher APIs, tile scrolling and
-dragging, and updating legacy Plasma 5 installations without losing panel settings.
+## Build and install
 
-It has been tested on Plasma **6.6.6**, Qt **6.10.2** and KDE Frameworks **6.24**.
-Package version: **46.1**. Compatibility with other Plasma versions has not been
-verified.
+Run these commands from the repository root:
 
 ```bash
 bash ./build --no-merge
 bash ./install
 ```
 
-`--no-merge` compiles existing translations without rewriting `.po` sources.
-The resulting package is `tiledmenu-v46.1-plasma6-0.plasmoid`.
-`install` uses `kpackagetool6` and works from any directory. It does not restart
-Plasma automatically. Reload an existing widget by logging out and back in, or
-explicitly use `bash ./install --restart` on systems with the
-`plasma-plasmashell.service` user service. Remove it with `bash ./uninstall`.
+The build compiles existing translations without changing their sources and
+produces `tiledmenu-v46.1-plasma6-0.plasmoid`. The installer uses `kpackagetool6`
+and installs or updates the widget for the current user.
 
-The plugin ID remains `com.github.zren.tiledmenu`, so upgrading replaces an
-existing installation and preserves its settings. The installer detects legacy
-Plasma 5 packages with missing KPackageStructure or an old ui/Main.qml entry
-point. It moves the old package to `$XDG_DATA_HOME/tiledmenu/backups/` (normally
-`~/.local/share/tiledmenu/backups/`) before installing the Plasma 6 package and
-restores it if installation fails. It does not modify panel configuration.
-Export the tile layout first if you already use Tiled Menu. Add the widget from
-Plasma's widget picker only if there is no existing instance. Keep an existing widget
-in its panel and reload it by logging out and back in.
+For a new installation, add **Tiled Menu** using Plasma's widget picker. For an
+update, keep the existing widget in its panel and log out and back in to reload
+it. Removing and recreating the widget creates a new instance with separate
+settings.
 
-For development checks and a separate preview window:
+To restart Plasma explicitly on systems using its systemd user service:
 
 ```bash
-/usr/bin/python3 tools/check-qml.py
-/usr/bin/python3 tools/check-runtime.py
-/usr/bin/python3 tools/test-install.py
-/usr/bin/python3 tools/test-drag.py
-plasmoidviewer -a "$PWD/package"
+bash ./install --restart
 ```
 
-General settings use Plasma’s Apply/OK/Cancel mechanism. The layout import/export
-page retains upstream’s immediate-save behavior.
+To remove the installed package:
 
-The component check requires the system PyQt6 QtQml and QtWidgets modules and
-installed KDE QML modules; it uses Qt 6 offscreen. `plasmoidviewer` requires
-Plasma 6's `plasma-sdk`. Packaging requires Python 3 and gettext (`msgfmt`);
-no C++ build is needed. After changing `config/main.xml`, regenerate the
-configuration aliases with `/usr/bin/python3 tools/generate-config.py`. Qt5Compat GraphicalEffects is still required.
+```bash
+bash ./uninstall
+```
 
-See [MIGRATION.md](MIGRATION.md) for validation results and remaining manual
-checks. Passing component checks does not establish full desktop compatibility.
+## Configuration and layout
 
-## Moving tiles
+Use the widget's settings to customize appearance, search, sidebar shortcuts and
+application commands. General settings are saved with **Apply** or **OK**;
+**Cancel** discards those edits. Layout import/export saves changes immediately.
+Export your layout before importing a different one.
 
-Drag an unlocked tile with the left mouse button to an empty grid position.
-A drop over an occupied position or outside the menu leaves it in place.
-Turn off “Lock Tiles” in the tile context menu before rearranging tiles.
+Drag an unlocked tile with the left mouse button onto an empty grid position.
+Dropping over an occupied position or outside the grid leaves it in place.
+Disable **Lock Tiles** in the context menu before rearranging tiles.
+Use **Meta + right-button drag** to resize the menu with the default Plasma
+window-management shortcut.
 
-## Screenshots
+## Existing installations
 
-![](https://i.imgur.com/rf6dI9Q.png)
+The plugin ID is `com.github.zren.tiledmenu`, so updates reuse existing widget
+settings. Access to files and applications still depends on their paths and
+launcher identifiers being available on the system.
 
-## Theming
+The installer handles older package formats by backing up the package under
+`$XDG_DATA_HOME/tiledmenu/backups/`, normally `~/.local/share/tiledmenu/backups/`,
+then installing the current package. If installation fails, it restores the old
+package. It does not rewrite the panel configuration.
 
-Read the [theming guide](Theming.md) to develop Desktop/Icon Themes for this widget.
+## Development and contributions
 
-## Translating
+Report issues and submit changes to [this fork's repository](https://github.com/alamios/plasma-applet-tiledmenu).
+Include the Plasma and Qt versions, reproduction steps and relevant QML errors.
 
-See the [package/translate](package/translate) folder for instructions on translating.
+- [Development and testing](DEVELOPMENT.md)
+- [Theming](Theming.md)
+- [Translations](package/translate/ReadMe.md)
+- [Changelog](Changelog.md)
+
+## Credits and license
+
+Based on [Tiled Menu by Chris Holland (Zren)](https://github.com/Zren/plasma-applet-tiledmenu).
+This fork is maintained independently. The package declares the **GPL-2.0-or-later**
+license and retains the original author attribution.

@@ -1,77 +1,60 @@
-# Translate
+# Translations
 
-## Plasma 6 development builds
+Translation sources are the `.po` catalogs in this directory. `template.pot`
+contains the extracted messages. Compiled `.mo` files are bundled inside the
+widget; they are generated and excluded from Git.
 
-From the repository root, `bash ./build --no-merge` compiles the existing catalogs
-and packages the widget without rewriting translation sources. Use
-`bash ./build --i18n-only` to compile only the catalogs. `bash ./build` retains the
-upstream translation extraction/merge workflow for release preparation.
-Preview commands require Plasma 6's `plasma-sdk`, which provides `plasmoidviewer`.
+Run the following commands from the repository root. Python 3 and gettext
+(`xgettext`, `msgmerge` and `msgfmt`) are required for the complete workflow.
+The `kpac` helper is already included in the repository.
 
-## Inherited upstream status
+## Add or update a language
 
-|  Locale  |  Lines  | % Done|
-|----------|---------|-------|
-| Template |     117 |       |
-| de       | 110/117 |   94% |
-| es       | 113/117 |   96% |
-| fa       | 117/117 |  100% |
-| fi       | 113/117 |   96% |
-| fr       | 116/117 |   99% |
-| he       | 116/117 |   99% |
-| hr       |  91/117 |   77% |
-| id       |  99/117 |   84% |
-| ja       | 117/117 |  100% |
-| ko       | 114/117 |   97% |
-| nl       | 117/117 |  100% |
-| pl       | 101/117 |   86% |
-| pt       |  96/117 |   82% |
-| pt_BR    | 112/117 |   95% |
-| ro       | 101/117 |   86% |
-| ru       | 113/117 |   96% |
-| sl       | 112/117 |   95% |
-| tr       | 112/117 |   95% |
-| zh_CN    |  88/117 |   75% |
-| zh_TW    | 117/117 |  100% |
+For a new language, copy `package/translate/template.pot` to
+`package/translate/<locale>.po`, for example `es.po` or `pt_BR.po`. Set the catalog
+headers for that locale and fill in the translations without changing message
+identifiers. Submit the catalog through this fork's contribution workflow.
 
+After changing translatable QML strings, extract messages, merge catalogs and
+compile translations:
 
-## New Translations
-
-* Fill out [`template.pot`](template.pot) with your translations then open a [new issue](https://github.com/Zren/plasma-applet-tiledmenu/issues/new), name the file `spanish.txt`, attach the txt file to the issue (drag and drop).
-
-Or if you know how to make a pull request
-
-* Copy the `template.pot` file and name it your locale's code (Eg: `en`/`de`/`fr`) with the extension `.po`. Then fill out all the `msgstr ""`.
-* Your region's locale code can be found at: https://stackoverflow.com/questions/3191664/list-of-all-locales-and-their-short-codes/28357857#28357857
-
-## Scripts
-
-Zren's `kpac` script can easily run the `gettext` commands for you, parsing the `metadata.json` and filling out any placeholders for you. `kpac` can be [downloaded here](https://github.com/Zren/plasma-applet-lib/blob/master/kpac) and should be placed at `~/Code/plasmoid-widgetname/kpac` to edit translations at `~/Code/plasmoid-widgetname/package/translate/`.
-
-
-* `python3 ./kpac i18n` will parse the `i18n()` calls in the `*.qml` files and write it to the `template.pot` file. Then it will merge any changes into the `*.po` language files. Then it converts the `*.po` files to it's binary `*.mo` version and move it to `contents/locale/...` which will bundle the translations in the `*.plasmoid` without needing the user to manually install them.
-* `python3 ./kpac localetest` will convert the `.po` to the `*.mo` files then run `plasmoidviewer` (part of `plasma-sdk`).
-
-## How it works
-
-Since KDE Frameworks v5.37, translations can be bundled with the zipped `*.plasmoid` file downloaded from the store.
-
-* `xgettext` extracts the messages from the source code into a `template.pot`.
-* Translators copy the `template.pot` to `fr.po` to translate the French language.
-* When the source code is updated, we use `msgmerge` to update the `fr.po` based on the updated `template.pot`.
-* When testing or releasing the widget, we convert the `.po` files to their binary `.mo` form with `msgfmt`.
-
-The binary `.mo` translation files are placed in `package/contents/locale/` so you may want to add `*.mo` to your `.gitignore`.
-
-```
-package/contents/locale/fr/LC_MESSAGES/plasma_applet_com.github.zren.tiledmenu.mo
+```bash
+python3 ./kpac i18n
 ```
 
-## Links
+Review and commit changes to the template and catalogs. To check a catalog
+without rebuilding the widget:
 
-* https://develop.kde.org/docs/plasma/widget/translations-i18n/
-* https://l10n.kde.org/stats/gui/trunk-kf5/team/fr/plasma-desktop/
-* https://techbase.kde.org/Development/Tutorials/Localization/i18n_Build_Systems
-* https://api.kde.org/frameworks/ki18n/html/prg_guide.html
+```bash
+msgfmt --check --output-file=/dev/null package/translate/es.po
+```
 
-> Version 8 of [Zren's i18n scripts](https://github.com/Zren/plasma-applet-lib).
+Replace `es.po` with the catalog being checked. Use the catalog itself to inspect
+translation coverage; completion percentages are not maintained in this guide.
+
+## Compile and preview
+
+Compile existing catalogs without extracting or merging messages:
+
+```bash
+bash ./build --i18n-only
+```
+
+Build a complete package from those catalogs:
+
+```bash
+bash ./build --no-merge
+```
+
+Compiled files are placed under
+`package/contents/locale/<locale>/LC_MESSAGES/plasma_applet_com.github.zren.tiledmenu.mo`.
+
+Preview a language with Plasma 6's `plasmoidviewer` from `plasma-sdk`:
+
+```bash
+python3 ./kpac localetest es
+```
+
+`bash ./build` also performs extraction and merging, and stops if translation
+sources have uncommitted changes. Use the explicit workflow above to review
+catalog updates before packaging.
