@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
-"POT-Creation-Date: 2024-03-14 04:37-0400\n"
-"PO-Revision-Date: 2020-09-08 15:41-0300\n"
+"POT-Creation-Date: 2026-10-11 20:40+0200\n"
+"PO-Revision-Date: 2026-10-11 20:40+0200\n"
 "Last-Translator: QUASAR FREAK <quasarfreak@gmail.com>\n"
 "Language-Team: Spanish <LL@li.org>\n"
 "Language: es\n"
@@ -30,7 +30,7 @@ msgstr "General"
 
 #: ../contents/config/config.qml
 msgid "Import/Export Layout"
-msgstr "Importar/Exportar plantilla"
+msgstr "Importar/Exportar distribución"
 
 #: ../contents/config/config.qml
 msgid "Advanced"
@@ -92,7 +92,7 @@ msgstr "Tamaño de baldosa"
 msgid "Tile Margin"
 msgstr "Margen de baldosa"
 
-#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/TileEditorView.qml
+#: ../contents/ui/TileEditorView.qml ../contents/ui/config/ConfigGeneral.qml
 msgid "Background Color"
 msgstr "Color de fondo"
 
@@ -126,7 +126,7 @@ msgstr "Derecha"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Group Text Alignment"
-msgstr ""
+msgstr "Alineación del texto de los grupos"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar"
@@ -146,7 +146,7 @@ msgstr "Alto del botón emergente"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Sidebar Shortcuts"
@@ -170,7 +170,7 @@ msgstr "Altura del campo de búsqueda"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Search Box Theme"
-msgstr ""
+msgstr "Tema del buscador"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Windows (White)"
@@ -188,11 +188,11 @@ msgstr "Ancho del área de la lista de aplicaciones"
 msgid "Default View"
 msgstr "Vista predeterminada"
 
-#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/SidebarView.qml
+#: ../contents/ui/SidebarView.qml ../contents/ui/config/ConfigGeneral.qml
 msgid "Alphabetical"
 msgstr "Alfabético"
 
-#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/SidebarView.qml
+#: ../contents/ui/SidebarView.qml ../contents/ui/config/ConfigGeneral.qml
 msgid "Categories"
 msgstr "Categorías"
 
@@ -204,7 +204,7 @@ msgstr "Saltar a letra"
 msgid "Jump To Category"
 msgstr "Saltar a categoría"
 
-#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/SidebarView.qml
+#: ../contents/ui/SidebarView.qml ../contents/ui/config/ConfigGeneral.qml
 msgid "Tiles Only"
 msgstr "Sólo baldosas"
 
@@ -226,7 +226,7 @@ msgstr "Debajo"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "App History"
-msgstr ""
+msgstr "Historial de aplicaciones"
 
 #: ../contents/ui/config/ConfigGeneral.qml
 msgid "Show:"
@@ -260,19 +260,19 @@ msgstr "Cuando este elemento gráfico tenga asignado un atajo global, como 'Alt+
 msgid "System Info"
 msgstr "Información del sistema"
 
-#: ../contents/ui/main.qml
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
 msgid "Terminal"
 msgstr "Terminal"
 
-#: ../contents/ui/main.qml
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
 msgid "Task Manager"
 msgstr "Gestor de tareas"
 
-#: ../contents/ui/main.qml ../contents/ui/SearchFiltersView.qml
+#: ../contents/ui/SearchFiltersView.qml ../contents/ui/main.qml
 msgid "System Settings"
 msgstr "Preferencias del sistema"
 
-#: ../contents/ui/main.qml
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
 msgid "File Manager"
 msgstr "Gestor de archivos"
 
@@ -309,7 +309,7 @@ msgctxt "Search [krunnerName, krunnerName, ...], "
 msgid "Search %1"
 msgstr "Buscar %1"
 
-#: ../contents/ui/SearchFiltersViewItem.qml ../contents/ui/SearchFiltersView.qml
+#: ../contents/ui/SearchFiltersView.qml ../contents/ui/SearchFiltersViewItem.qml
 msgid "Default"
 msgstr "Predeterminado"
 
@@ -399,7 +399,7 @@ msgstr "Cerrar"
 
 #: ../contents/ui/TileEditorView.qml
 msgid "Url"
-msgstr "LRU"
+msgstr "URL"
 
 #: ../contents/ui/TileEditorView.qml
 msgid "Label"
@@ -480,7 +480,7 @@ msgstr "Arrastrar carpetas desde el gestor de archivos."
 
 #: ../contents/ui/TileGridSplash.qml
 msgid "Use Default Tile Layout"
-msgstr "Usar la plantilla de baldosas predeterminada"
+msgstr "Usar la distribución de baldosas predeterminada"
 
 #: ../contents/ui/TileItem.qml
 msgid "Sort Tiles"
@@ -508,3 +508,7 @@ msgstr "Ordenar baldosas"
 #~ msgctxt "@item:inmenu Reset icon to default"
 #~ msgid "Clear Icon"
 #~ msgstr "Limpiar Icono"
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
+msgstr "Menú contextual"

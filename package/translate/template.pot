@@ -1,5 +1,5 @@
 # Translation of tiledmenu in LANGUAGE
-# Copyright (C) 2024
+# Copyright (C) 2026
 # This file is distributed under the same license as the tiledmenu package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tiledmenu\n"
 "Report-Msgid-Bugs-To: https://github.com/Zren/plasma-applet-tiledmenu\n"
-"POT-Creation-Date: 2024-03-14 04:37-0400\n"
+"POT-Creation-Date: 2026-10-11 20:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,7 +93,7 @@ msgstr ""
 msgid "Tile Margin"
 msgstr ""
 
-#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/TileEditorView.qml
+#: ../contents/ui/TileEditorView.qml ../contents/ui/config/ConfigGeneral.qml
 msgid "Background Color"
 msgstr ""
 
@@ -189,11 +189,11 @@ msgstr ""
 msgid "Default View"
 msgstr ""
 
-#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/SidebarView.qml
+#: ../contents/ui/SidebarView.qml ../contents/ui/config/ConfigGeneral.qml
 msgid "Alphabetical"
 msgstr ""
 
-#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/SidebarView.qml
+#: ../contents/ui/SidebarView.qml ../contents/ui/config/ConfigGeneral.qml
 msgid "Categories"
 msgstr ""
 
@@ -205,7 +205,7 @@ msgstr ""
 msgid "Jump To Category"
 msgstr ""
 
-#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/SidebarView.qml
+#: ../contents/ui/SidebarView.qml ../contents/ui/config/ConfigGeneral.qml
 msgid "Tiles Only"
 msgstr ""
 
@@ -261,19 +261,19 @@ msgstr ""
 msgid "System Info"
 msgstr ""
 
-#: ../contents/ui/main.qml
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
 msgid "Terminal"
 msgstr ""
 
-#: ../contents/ui/main.qml
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
 msgid "Task Manager"
 msgstr ""
 
-#: ../contents/ui/main.qml ../contents/ui/SearchFiltersView.qml
+#: ../contents/ui/SearchFiltersView.qml ../contents/ui/main.qml
 msgid "System Settings"
 msgstr ""
 
-#: ../contents/ui/main.qml
+#: ../contents/ui/config/ConfigGeneral.qml ../contents/ui/main.qml
 msgid "File Manager"
 msgstr ""
 
@@ -310,7 +310,7 @@ msgctxt "Search [krunnerName, krunnerName, ...], "
 msgid "Search %1"
 msgstr ""
 
-#: ../contents/ui/SearchFiltersViewItem.qml ../contents/ui/SearchFiltersView.qml
+#: ../contents/ui/SearchFiltersView.qml ../contents/ui/SearchFiltersViewItem.qml
 msgid "Default"
 msgstr ""
 
@@ -485,4 +485,8 @@ msgstr ""
 
 #: ../contents/ui/TileItem.qml
 msgid "Sort Tiles"
+msgstr ""
+
+#: ../contents/ui/config/ConfigGeneral.qml
+msgid "Right Click Menu"
 msgstr ""

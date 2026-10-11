@@ -59,6 +59,11 @@ application commands. General settings are saved with **Apply** or **OK**;
 **Cancel** discards those edits. Layout import/export saves changes immediately.
 Export your layout before importing a different one.
 
+Pin an application from its context menu, or drag applications, files and folders
+from Dolphin onto the grid. Use **Edit Tile** to set a label, icon, background,
+position and size. Tile sizes are expressed in grid cells, such as 1×1, 2×2 or
+4×2. Group labels provide actions to move and sort their tiles.
+
 Drag an unlocked tile with the left mouse button onto an empty grid position.
 Dropping over an occupied position or outside the grid leaves it in place.
 Disable **Lock Tiles** in the context menu before rearranging tiles.

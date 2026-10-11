@@ -30,7 +30,9 @@ msgfmt --check --output-file=/dev/null package/translate/es.po
 ```
 
 Replace `es.po` with the catalog being checked. Use the catalog itself to inspect
-translation coverage; completion percentages are not maintained in this guide.
+translation coverage. `python3 ./kpac i18n` prints current coverage without
+overwriting this guide. Only translated, non-fuzzy messages are compiled for use;
+untranslated messages fall back to English.
 
 ## Compile and preview
 
@@ -58,3 +60,33 @@ python3 ./kpac localetest es
 `bash ./build` also performs extraction and merging, and stops if translation
 sources have uncommitted changes. Use the explicit workflow above to review
 catalog updates before packaging.
+
+## Catalog review
+
+Coverage against the current 118-message template, reviewed on 2026-10-11.
+Pending counts include untranslated or fuzzy messages; they require language
+review before being considered complete. The Spanish catalog has been completed.
+Run the extraction workflow again after changing source strings.
+
+| Locale | Compiled translations | Pending |
+| --- | ---: | ---: |
+| `de` | 110 | 8 |
+| `es` | 118 | 0 |
+| `fa` | 117 | 1 |
+| `fi` | 113 | 5 |
+| `fr` | 116 | 2 |
+| `he` | 116 | 2 |
+| `hr` | 91 | 27 |
+| `id` | 99 | 19 |
+| `ja` | 117 | 1 |
+| `ko` | 114 | 4 |
+| `nl` | 117 | 1 |
+| `pl` | 101 | 17 |
+| `pt` | 96 | 22 |
+| `pt_BR` | 112 | 6 |
+| `ro` | 101 | 17 |
+| `ru` | 113 | 5 |
+| `sl` | 112 | 6 |
+| `tr` | 112 | 6 |
+| `zh_CN` | 87 | 31 |
+| `zh_TW` | 117 | 1 |

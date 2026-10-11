@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Complete the Spanish catalog, including the application-command settings, and
+  correct the URL and layout labels.
+- Preserve the maintained translation guide when refreshing catalogs; print
+  coverage in the terminal instead.
+
 ## 46.1
 
 Initial maintained version of the independent Plasma 6.6 fork.
